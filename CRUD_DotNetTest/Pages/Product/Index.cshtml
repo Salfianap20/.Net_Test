@@ -1,0 +1,82 @@
+﻿@page
+@model CRUD_DotNetTest.Pages.Product.IndexModel
+
+@{
+    ViewData["Title"] = "List Product";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="scrollable-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Produk[0].Nama_Barang)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Produk[0].Harga)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Produk[0].Stok)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Produk)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nama_Barang)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Harga)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stok)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-info btn-sm">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- CSS -->
+<style>
+    .scrollable-container {
+        max-height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+    .btn {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+</style>

@@ -1,0 +1,47 @@
+﻿@page
+@model CRUD_DotNetTest.Pages.Product.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure want to delete this Product?</h3>
+<div>
+    <h4>Produk</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produk.Nama_Barang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produk.Nama_Barang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produk.Harga)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produk.Harga)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produk.Stok)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produk.Stok)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Produk.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+
+<!-- CSS -->
+<style>
+    .btn-secondary {
+        margin-left: 10px; 
+    }
+</style>

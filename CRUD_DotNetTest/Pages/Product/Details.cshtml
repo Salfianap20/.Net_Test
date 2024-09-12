@@ -1,0 +1,67 @@
+﻿@page
+@model CRUD_DotNetTest.Pages.Product.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Produk</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produk.Nama_Barang)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produk.Nama_Barang)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produk.Harga)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produk.Harga)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produk.Stok)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produk.Stok)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Produk?.ID" class="btn btn-warning">Edit</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+<!-- CSS -->
+<style>
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+</style>
